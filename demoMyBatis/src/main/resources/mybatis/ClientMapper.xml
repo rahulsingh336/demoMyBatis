@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demoMyBatis.mapper.ClientMapper">
+
+    <select id="findByFirstName" resultType="Client" parameterType="java.lang.String">
+        SELECT
+        id as id,
+        first_name as firstName,
+        last_name as lastName
+        FROM spring_demo.clients
+        WHERE first_name = #{value}
+    </select>
+
+    <resultMap id="UserResultMap" type="Client">
+        <id column="id" property="id" />
+        <result column="first_name" property="firstName" />
+    </resultMap>
+
+    <select id="findAllUsers" resultMap="UserResultMap">
+        select id, first_name from clients
+    </select>
+
+</mapper>

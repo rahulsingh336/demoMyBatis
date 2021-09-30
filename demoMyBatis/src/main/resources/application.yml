@@ -1,0 +1,15 @@
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/*.xml # Tells mybatis to look in resources/mybatis for XML mappers
+  type-aliases-package: com.example.demoMyBatis.model # Tells mybatis to look for our Client class in the right package
+
+spring:
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/spring_demo?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    #driver: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+
+
